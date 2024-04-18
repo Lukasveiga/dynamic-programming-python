@@ -1,6 +1,6 @@
 # Write a function `fib(n)` that takes in a number as an argument.
 # The function should return the n-th number of the Fibonacci sequence.
-from utils import mesureFunctionTimeExecution;
+from utils import mesureFunctionTimeExecution, checkFunctionResult;
 
 # O(n) time
 # O(n) space
@@ -34,19 +34,16 @@ def fibRecursionMemoization(n, memo = {}):
 if __name__ == '__main__':
     errorMessage = "Fib fuction did not return the correct value";
     
-    if(fib(7) != 13):
-        raise Exception(errorMessage);
+    checkFunctionResult(fib(7), 13, errorMessage);
+    checkFunctionResult(fibRecursion(7), 13, errorMessage);
+    checkFunctionResult(fibRecursionMemoization(7), 13, errorMessage);
     
-    if(fibRecursion(7) != 13):
-        raise Exception(errorMessage);
-    
-    if(fibRecursionMemoization(7) != 13):
-        raise Exception(errorMessage);
+    input = 30;
     
     results = {};
-    results["fib"] = mesureFunctionTimeExecution(fib, 30);
-    results["fibRecursion"] = mesureFunctionTimeExecution(fibRecursion, 30);
-    results["fibRecursionMemoization"] = mesureFunctionTimeExecution(fibRecursionMemoization, 30);
+    results["fib"] = mesureFunctionTimeExecution(fib, input);
+    results["fibRecursion"] = mesureFunctionTimeExecution(fibRecursion, input);
+    results["fibRecursionMemoization"] = mesureFunctionTimeExecution(fibRecursionMemoization, input);
     
-    print(sorted(results.items()));
+    print(sorted(results.items(), key=lambda x: x[1]));
     
