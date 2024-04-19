@@ -9,3 +9,5 @@ def mesureFunctionTimeExecution(function, *args):
 def checkFunctionResult(given, expected, message):
     if (given != expected):
        raise Exception(message);
+   
+    print("Function worked correctly");
