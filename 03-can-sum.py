@@ -12,7 +12,7 @@
 
 from utils import checkFunctionResult, mesureFunctionTimeExecution;
 
-# O(n^m) time: m = array length
+# O(m^n) time: m = array length
 # O(n) space
 def canSum(targetSum, array):
     if targetSum == 0: return True;
