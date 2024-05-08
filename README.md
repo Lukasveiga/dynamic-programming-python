@@ -14,3 +14,12 @@ Repository to follow the [dynamic programming course](https://www.youtube.com/wa
    - Add a memo object
    - Add a base case to return memo values
    - Store return values into the memo
+
+### Tabulation Recipe:
+
+- Visualize the problem as a table;
+- Size the table based on the inputs;
+- Initialize the table with default values;
+- Seed the trivial asnwer into the table;
+- Iterate through the table;
+- Fill futher positions based on the current position;
